@@ -4,7 +4,7 @@
 export default function (type: string, time: number | string) {
   let date = "" as Object;
   if (type == "parse") {
-    time = !time ? 0 : time;
+    if (!time) return null;
     time = typeof time === "string" ? parseInt(time) : time;
     // 解析时间戳
     date = {
